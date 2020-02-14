@@ -102,14 +102,16 @@ p {
 }
 
 .middle-content .boxes .box {
-    width: 12.5%;
     height: 100px;
-    background: black;
-    margin: 20px 2.5%;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.box_container {
+    flex-basis: 12.5%;
+    margin: 20px 2.5%;
 }
 
 .bottom-content {
@@ -144,8 +146,6 @@ footer nav a {
     color: white;
     text-decoration: none;
 }
-
-/* Start My Styles */
 
 header {
     margin: 30px 0;
@@ -193,45 +193,50 @@ header nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-header.header_about {
+.contact_header.header_image {
+    background: url('../img/skyline.jpg') no-repeat center -100px;
+    height: 200px;
+}
+
+header.header_about, header.header_contact {
     border-bottom: 1px dotted black;
     padding-bottom: 20px;
 }
 
 .header_desc {
     width: 95%;
-    margin: 0 auto;
+    margin: 20px auto 0;
 }
 
 /* Box Colors */
-.middle-content .boxes .box:nth-of-type(1) {
+.middle-content .boxes .box_container:nth-of-type(1) .box {
     background-color: teal;
 }
-.middle-content .boxes .box:nth-of-type(2) {
+.middle-content .boxes .box_container:nth-of-type(2) .box {
     background-color: gold;
 }
-.middle-content .boxes .box:nth-of-type(3) {
+.middle-content .boxes .box_container:nth-of-type(3) .box {
     background-color: cadetblue;
 }
-.middle-content .boxes .box:nth-of-type(4) {
+.middle-content .boxes .box_container:nth-of-type(4) .box {
     background-color: coral;
 }
-.middle-content .boxes .box:nth-of-type(5) {
+.middle-content .boxes .box_container:nth-of-type(5) .box {
     background-color: crimson;
 }
-.middle-content .boxes .box:nth-of-type(6) {
+.middle-content .boxes .box_container:nth-of-type(6) .box {
     background-color: forestgreen;
 }
-.middle-content .boxes .box:nth-of-type(7) {
+.middle-content .boxes .box_container:nth-of-type(7) .box {
     background-color: darkorchid;
 }
-.middle-content .boxes .box:nth-of-type(8) {
+.middle-content .boxes .box_container:nth-of-type(8) .box {
     background-color: hotpink;
 }
-.middle-content .boxes .box:nth-of-type(9) {
+.middle-content .boxes .box_container:nth-of-type(9) .box {
     background-color: indigo;
 }
-.middle-content .boxes .box:nth-of-type(10) {
+.middle-content .boxes .box_container:nth-of-type(10) .box {
     background-color: dodgerblue;
 }
 
@@ -296,3 +301,205 @@ header.header_about {
 .worktogether {
     margin: 20px 0 30px;
 }
+
+/* Contact Form */
+.contact {
+    margin-bottom: 30px;
+}
+.contact form {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.contact form input {
+    flex-basis: 49%;
+    margin-bottom: 20px;
+    padding: 10px;
+
+    border: 2px solid black;
+}
+
+.contact form textarea {
+    flex-basis: 100%;
+    height: 300px;
+
+    padding: 10px;
+
+    border: 2px solid black;
+
+    resize: none;
+}
+
+.contact form input:focus, .contact form textarea:focus {
+    outline: none;
+}
+
+.contact form button {
+    flex-basis: 49%;
+    height: 40px;
+    background: black;
+    color: white;
+    border: 2px solid black;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.contact form button:last-of-type {
+    background: white;
+    color: black;
+}
+
+.contact form button:hover {
+    cursor: pointer;
+}
+
+/* Animations */
+.boxes .box_container:nth-of-type(1):hover .box {
+    animation: boxmove1 .4s ease-in-out;
+    right: 200px;
+}
+.boxes .box_container:nth-of-type(2):hover .box {
+    animation: boxmove2 .4s ease-in-out;
+    right: 356px;
+}
+.boxes .box_container:nth-of-type(3):hover .box {
+    animation: boxmove3 .4s ease-in-out;
+    right: 513px;
+}
+.boxes .box_container:nth-of-type(4):hover .box {
+    animation: boxmove4 .4s ease-in-out;
+    right: 670px;
+}
+.boxes .box_container:nth-of-type(5):hover .box {
+    animation: boxmove5 .4s ease-in-out;
+    right: 827px;
+}
+.boxes .box_container:nth-of-type(6):hover .box {
+    animation: boxmove6 .4s ease-in-out;
+    bottom: 140px;
+    right: 200px;
+}
+
+.boxes .box_container:nth-of-type(7):hover .box {
+    animation: boxmove7 .4s ease-in-out;
+    bottom: 140px;
+    right: 356px;
+}
+.boxes .box_container:nth-of-type(8):hover .box {
+    animation: boxmove8 .4s ease-in-out;
+    bottom: 140px;
+    right: 513px;
+}
+
+.boxes .box_container:nth-of-type(9):hover .box {
+    animation: boxmove9 .4s ease-in-out;
+    bottom: 140px;
+    right: 670px;
+}
+
+.boxes .box_container:nth-of-type(10):hover .box {
+    animation: boxmove10 .4s ease-in-out;
+    bottom: 140px;
+    right: 827px;
+
+}
+
+.boxes .box_container .box {
+    position: relative;
+    right: 0;
+    bottom: 0;
+
+}
+
+@keyframes boxmove1 {
+    from{
+        right: 0;
+    }
+    to{ 
+        right: 200px;
+    }
+}
+@keyframes boxmove2 {
+    from{
+        right: 0;
+    }
+    to{ 
+        right: 356px;
+    }
+}
+@keyframes boxmove3 {
+    from{
+        right: 0;
+    }
+    to{ 
+        right: 513px;
+    }
+}
+@keyframes boxmove4 {
+    from{
+        right: 0;
+    }
+    to{ 
+        right: 670px;
+    }
+}
+@keyframes boxmove5 {
+    from{
+        right: 0;
+    }
+    to{ 
+        right: 827px;
+    }
+}
+@keyframes boxmove6 {
+    from{
+        bottom: 0;
+        right: 0;
+    }
+    to{ 
+        bottom: 140px;
+        right: 200px;
+    }
+}
+@keyframes boxmove7 {
+    from{
+        bottom: 0;
+        right: 0;
+    }
+    to{ 
+        bottom: 140px;
+        right: 356px;
+    }
+}
+@keyframes boxmove8 {
+    from{
+        bottom: 0;
+        right: 0;
+    }
+    to{
+        bottom: 140px;
+        right: 513px;
+    }
+}
+@keyframes boxmove9 {
+    from{
+        bottom: 0;
+        right: 0;
+    }
+    to{ 
+        bottom: 140px;
+        right: 670px;
+    }
+}
+
+@keyframes boxmove10 {
+    from {
+        bottom: 0;
+        right: 0;
+    }
+    to {
+        bottom: 140px;
+        right: 827px;
+    }
+} 
